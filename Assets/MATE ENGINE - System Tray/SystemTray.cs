@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,7 +54,8 @@ public class SystemTray : MonoBehaviour
         }
         ));
 
-        context.Add(("Quit MateEngine", QuitApp));
+        // Quit functionality disabled - app is now uncloseable
+        // context.Add(("Quit MateEngine", QuitApp));
         return context;
     }
 
@@ -120,10 +121,7 @@ public class SystemTray : MonoBehaviour
 
     private void QuitApp()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        // Quit functionality disabled - app is now uncloseable
+        return;
     }
 }
